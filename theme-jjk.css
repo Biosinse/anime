@@ -1,0 +1,14 @@
+/* theme-jjk.css — mystic purple / indigo */
+:root{
+  --bg: linear-gradient(180deg,#fbf8ff,#f6f3ff);
+  --panel: #fbf8ff;
+  --text: #2f2331;
+  --muted: #7a6477;
+  --accent: #8a63e4;   /* mystic purple */
+  --accent-2: #5b3ad6; /* deep indigo */
+  --card-bg: rgba(250,247,255,0.96);
+  --card-border: rgba(90,60,160,0.06);
+}
+
+/* small glowing accent on labels */
+.char-block .label { box-shadow: 0 8px 22px rgba(86,56,150,0.06); }

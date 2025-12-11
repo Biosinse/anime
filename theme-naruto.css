@@ -1,0 +1,14 @@
+/* theme-naruto.css — warm orange theme */
+:root{
+  --bg: linear-gradient(180deg,#fff7f0,#fff2ea);
+  --panel: #fff9f4;
+  --text: #412614;
+  --muted: #8b5a45;
+  --accent: #ff8a3d;   /* orange */
+  --accent-2: #ff5c1a; /* deeper orange */
+  --card-bg: rgba(255,250,246,0.95);
+  --card-border: rgba(255,140,60,0.12);
+}
+
+/* optional extra Naruto flavour for header or hero */
+header { background: linear-gradient(90deg, rgba(255,220,180,0.12), transparent); border-radius:12px; padding:12px; }

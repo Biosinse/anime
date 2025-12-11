@@ -1,0 +1,299 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Demon Slayer - A Tale of Flame and Blood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ---------------------------
+       GLOBAL: hero blur/brightness variables (Akatsuki "dope" look)
+       Edit only these to tune the look site-wide.
+       --------------------------- */
+    :root{
+      --hero-blur-default: 3px;
+      --hero-bright-default: .86;
+      --hero-saturate-default: .98;
+      --hero-contrast-default: 1.02;
+
+      --hero-blur-hover: 0px;
+      --hero-bright-hover: 1.02;
+      --hero-saturate-hover: 1.06;
+      --hero-contrast-hover: 1.03;
+
+      --card-w: 220px;
+      --card-h: 160px;
+      --gap: 14px;
+
+      --bg: #fff2f8;
+      --panel: #ffe5f0;
+      --accent: #ff9dbc;
+      --accent-2: #ff6f9c;
+      --text: #402832;
+      --muted: #7a6170;
+    }
+
+    /* page basics */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:18px; background:var(--bg); color:var(--text); }
+    .container { max-width:1000px; margin:0 auto; }
+    nav.site-nav { margin-bottom:12px; }
+    nav.site-nav a { margin-right:10px; color:var(--accent-2); text-decoration:none; font-weight:600; }
+    header h1 { margin:0 0 6px; font-size:1.5rem; }
+    header p.muted { margin:0 0 18px; color:var(--muted); }
+
+    main.section { background: transparent; padding-bottom:18px; }
+
+    /* char grid */
+    .char-hover-grid, .cat-grid { display:flex; flex-wrap:wrap; gap:var(--gap); align-items:flex-start; }
+
+    /* card */
+    .char-block {
+      width:var(--card-w);
+      height:var(--card-h);
+      border-radius:10px;
+      overflow:hidden;
+      position:relative;
+      display:inline-flex;
+      align-items:flex-end;
+      padding:12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,249,0.96));
+      border:1px solid rgba(0,0,0,0.04);
+      text-decoration:none;
+      color:inherit;
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease;
+    }
+    .char-block:hover { transform: translateY(-8px); box-shadow: 0 18px 36px rgba(0,0,0,0.09); }
+
+    /* fallback background (kept inline) */
+    .char-block .bg {
+      position:absolute; inset:0; z-index:0;
+      background-size:cover; background-position:center;
+    }
+
+    /* HERO IMAGE overlay (on top of fallback) */
+    .char-block .bg img.card-hero {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+      pointer-events:none;
+      filter: blur(var(--hero-blur-default)) brightness(var(--hero-bright-default)) saturate(var(--hero-saturate-default)) contrast(var(--hero-contrast-default));
+      transform: scale(1.02);
+      transition: filter .22s ease, transform .22s ease, opacity .18s ease;
+      z-index:3; opacity:1;
+    }
+
+    .char-block:hover .bg img.card-hero,
+    .char-block:focus-within .bg img.card-hero {
+      filter: blur(var(--hero-blur-hover)) brightness(var(--hero-bright-hover)) saturate(var(--hero-saturate-hover)) contrast(var(--hero-contrast-hover));
+      transform: scale(1);
+    }
+
+    /* label overlay */
+    .char-block .label {
+      position:relative; z-index:4;
+      font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);
+      padding:6px 8px; border-radius:8px; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+      margin-left:8px;
+    }
+
+    /* missing badge */
+    .char-block .missing {
+      position:absolute; left:8px; top:8px; z-index:5; display:none;
+      background: rgba(255,255,255,0.95); color:#b33; font-weight:700;
+      padding:6px 8px; border-radius:6px; font-size:12px; box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    /* ensure label sits above hero */
+    .char-block .label { z-index:4; }
+
+    /* responsive */
+    @media (max-width:760px){
+      :root { --card-w: calc(50% - 12px); }
+      .char-block { width: calc(50% - 12px); height:150px; }
+    }
+    @media (max-width:420px){
+      :root { --card-w: 100%; }
+      .char-block { width:100%; height:140px; }
+    }
+
+    /* small button style (kept simple) */
+    .button { background:var(--accent); color:#fff; padding:.6rem .85rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">All Animes</a>
+      <a href="index.html">Home</a>
+      <a href="anime2.html">Demon Slayer</a>
+    </nav>
+
+    <header>
+      <h1>Demon Slayer: Chronicles of the Demon-Slaying Corps</h1>
+      <p class="muted">A story-driven overview that reads like a narrative - follow the arcs, the hardships and the luminous bravery of those who stand between humanity and the night.</p>
+    </header>
+
+    <main class="section">
+      <article>
+        <h2>Prologue - The Scent of Ash</h2>
+        <p>
+          The world of Demon Slayer opens in the quiet ache of a mountain village where fate arrives in a single, terrible night.
+          A boy named Tanjirō returns home to discover his family slaughtered, their house smoldering with the memory of flames.
+          Only his sister, Nezuko, survives - but she has changed: a demon's mark in the eyes, and a fragile human thread still tethering her soul.
+          What begins as a boy's desperate attempt to protect becomes the first breath of a lifetime spent walking the narrow edge between light and shadow.
+        </p>
+
+        <h2>First Arc - The Decision to Become</h2>
+        <p>
+          Tanjirō's path is not heroic spectacle but a small, stubborn decision to shoulder grief and to convert it into purpose.
+          He seeks the Demon Slayer Corps, not for glory but for one truth - to restore Nezuko.
+          The Corps is not a uniform institution; it is a brotherhood of broken people who train until their bones feel like old rope and their lungs know the rhythm of twelve breaths in battle.
+          Here, the narrative deepens: every initiated blade carries a memory, every mission is a test of what remains human after violence is administered.
+        </p>
+
+        <h2>Journey and Training - The Slow Bloom of Skill</h2>
+        <p>
+          Training scenes in Demon Slayer are not montage; they are intimate apprenticeship. Tanjirō learns to bind his grief to precision - how to breathe so the sword becomes an extension of the lungs, how to watch a demon's movement the way a fisherman reads water.
+          He trains under masters whose kindness is rugged and whose lessons are brutal. He learns the Water Breathing forms, each style a poem of motion. The story lingers on small failures, the mornings he wakes sore and raw, and the friendships formed in backroom barracks over stewing pots.
+        </p>
+
+        <h2>Encounters and Loss - The Weight of Every Life</h2>
+        <p>
+          Each mission is a story in miniature: a village haunted by a demon whose tragedy is revealed in fragments; a town where fear has calcified into unjust punishment; a child who sees monsters and humanity in the same shadow.
+          The Corps' victories are costly. Friends fall; backstories are unveiled. The narrative voice shifts smoothly between the exterior action - sword clashing, breaths counted - and interior reflection: how survival tampers with mercy, how hatred warps and how compassion can still cut through hate.
+        </p>
+
+        <h2>High Stakes - The Hashira and the Upper Moons</h2>
+        <p>
+          The Hashira, the Corps' elite, are introduced not as legends but as people with histories that echo Tanjirō's own: wounds, choices, and hard-earned philosophies.
+          Opposed to them are the Upper Moons - demons with centuries of memory, each a slow, terrible antagonist with motives and tragedies of their own.
+          These confrontations are operatic; they test the Corps' mettle and force the protagonists to reckon with sacrifice. It is a story where victory often means surviving with a wound that will never fully close.
+        </p>
+
+        <h2>Theme - Humanity as an Act of Resistance</h2>
+        <p>
+          At its heart Demon Slayer is less about the spectacle of demon-slaying and more about what it means to keep being human under pressure.
+          The show repeatedly frames compassion as rebellion: Nezuko's retained humanity is proof that the human spirit can endure even when all logic says otherwise.
+          The narrative asks the reader to see monsters as broken humans, heroes as fragile caregivers, and courage as the decision to rise again even when the world has been rearranged into ruins.
+        </p>
+      </article>
+
+      <section style="margin-top:20px;">
+        <h3>Dive into Characters</h3>
+        <p class="muted">Click a tile to read a detailed biography and role analysis for each core character in this set of ten.</p>
+
+        <div class="char-hover-grid">
+          <!-- Tanjirō -->
+          <a class="char-block" href="characters/anime2_tanjiro.html" title="Tanjirō Kamado">
+            <div class="bg" style="background-image:url('images/anime2_tanjiro_card.jpg')">
+              <img class="card-hero" src="images/anime2_tanjiro_hero.jpg" alt="Tanjirō Kamado — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Tanjirō Kamado</div>
+            <div class="missing">missing: anime2_tanjiro_hero.jpg</div>
+          </a>
+
+          <!-- Nezuko -->
+          <a class="char-block" href="characters/anime2_nezuko.html" title="Nezuko Kamado">
+            <div class="bg" style="background-image:url('images/anime2_nezuko_card.jpg')">
+              <img class="card-hero" src="images/anime2_nezuko_hero.jpg" alt="Nezuko Kamado — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Nezuko Kamado</div>
+            <div class="missing">missing: anime2_nezuko_hero.jpg</div>
+          </a>
+
+          <!-- Zenitsu -->
+          <a class="char-block" href="characters/anime2_zenitsu.html" title="Zenitsu Agatsuma">
+            <div class="bg" style="background-image:url('images/anime2_zenitsu_card.jpg')">
+              <img class="card-hero" src="images/anime2_zenitsu_hero.jpg" alt="Zenitsu Agatsuma — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Zenitsu Agatsuma</div>
+            <div class="missing">missing: anime2_zenitsu_hero.jpg</div>
+          </a>
+
+          <!-- Inosuke -->
+          <a class="char-block" href="characters/anime2_inosuke.html" title="Inosuke Hashibira">
+            <div class="bg" style="background-image:url('images/anime2_inosuke_card.jpg')">
+              <img class="card-hero" src="images/anime2_inosuke_hero.jpg" alt="Inosuke Hashibira — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Inosuke Hashibira</div>
+            <div class="missing">missing: anime2_inosuke_hero.jpg</div>
+          </a>
+
+          <!-- Giyu -->
+          <a class="char-block" href="characters/anime2_giyu.html" title="Giyu Tomioka">
+            <div class="bg" style="background-image:url('images/anime2_giyu_card.jpg')">
+              <img class="card-hero" src="images/anime2_giyu_hero.jpg" alt="Giyu Tomioka — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Giyu Tomioka</div>
+            <div class="missing">missing: anime2_giyu_hero.jpg</div>
+          </a>
+
+          <!-- Shinobu -->
+          <a class="char-block" href="characters/anime2_shinobu.html" title="Shinobu Kocho">
+            <div class="bg" style="background-image:url('images/anime2_shinobu_card.jpg')">
+              <img class="card-hero" src="images/anime2_shinobu_hero.jpg" alt="Shinobu Kocho — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Shinobu Kocho</div>
+            <div class="missing">missing: anime2_shinobu_hero.jpg</div>
+          </a>
+
+          <!-- Kyojuro -->
+          <a class="char-block" href="characters/anime2_kyojuro.html" title="Kyojuro Rengoku">
+            <div class="bg" style="background-image:url('images/anime2_kyojuro_card.jpg')">
+              <img class="card-hero" src="images/anime2_kyojuro_hero.jpg" alt="Kyojuro Rengoku — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Kyojuro Rengoku</div>
+            <div class="missing">missing: anime2_kyojuro_hero.jpg</div>
+          </a>
+
+          <!-- Muichiro -->
+          <a class="char-block" href="characters/anime2_muichiro.html" title="Muichirō Tokitō">
+            <div class="bg" style="background-image:url('images/anime2_muichiro_card.jpg')">
+              <img class="card-hero" src="images/anime2_muichiro_hero.jpg" alt="Muichirō Tokitō — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Muichirō Tokitō</div>
+            <div class="missing">missing: anime2_muichiro_hero.jpg</div>
+          </a>
+
+          <!-- Mitsuri -->
+          <a class="char-block" href="characters/anime2_mitsuri.html" title="Mitsuri Kanroji">
+            <div class="bg" style="background-image:url('images/anime2_mitsuri_card.jpg')">
+              <img class="card-hero" src="images/anime2_mitsuri_hero.jpg" alt="Mitsuri Kanroji — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Mitsuri Kanroji</div>
+            <div class="missing">missing: anime2_mitsuri_hero.jpg</div>
+          </a>
+
+          <!-- Obanai -->
+          <a class="char-block" href="characters/anime2_obanai.html" title="Obanai Iguro">
+            <div class="bg" style="background-image:url('images/anime2_obanai_card.jpg')">
+              <img class="card-hero" src="images/anime2_obanai_hero.jpg" alt="Obanai Iguro — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+            </div>
+            <div class="label">Obanai Iguro</div>
+            <div class="missing">missing: anime2_obanai_hero.jpg</div>
+          </a>
+
+        </div>
+
+        <p style="margin-top:16px;"><a class="button" href="index.html">Back to Index</a></p>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // reveal missing badges when hero file fails to load
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.char-block').forEach(block => {
+        const img = block.querySelector('img.card-hero');
+        const missing = block.querySelector('.missing');
+        if(!img) return;
+        if(!img.complete || img.naturalWidth === 0) {
+          if(missing) missing.style.display = 'block';
+        }
+        img.addEventListener('error', () => { if(missing) missing.style.display = 'block'; });
+        img.addEventListener('load', () => { if(missing) missing.style.display = 'none'; });
+      });
+    });
+  </script>
+
+</body>
+</html>

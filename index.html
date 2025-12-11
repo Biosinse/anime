@@ -1,0 +1,319 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Anime Info — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* small page-specific additions for the index */
+    .hero {
+      display:flex;
+      gap:18px;
+      align-items:center;
+      padding:18px;
+      border-radius:12px;
+      background: linear-gradient(135deg, rgba(255,245,240,0.9), rgba(255,238,228,0.9));
+      border:1px solid #ffe7d9;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      margin-bottom:18px;
+    }
+    .hero .intro {
+      flex:1;
+    }
+    .hero h2 { margin:4px 0 8px; font-size:1.6rem; color:#4a3129; }
+    .hero p { margin:0; color: #6d544d; }
+    .anime-grid {
+      display:grid;
+      gap:18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top:18px;
+    }
+    .anime-tile {
+      position:relative;
+      height:220px;
+      border-radius:14px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:16px;
+      text-decoration:none;
+      color:var(--text);
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,244,238,0.88));
+      border:1px solid #ffdccd;
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .25s ease;
+    }
+    .anime-tile .tile-bg {
+      position:absolute; inset:0; z-index:0; background-size:cover; background-position:center; opacity:0.18; filter:grayscale(.08) blur(0.6px);
+    }
+    .anime-tile .tile-head { position:relative; z-index:2; font-weight:800; font-size:1.05rem; margin-bottom:6px; }
+    .anime-tile .tile-desc { position:relative; z-index:2; color:var(--muted); font-size:0.95rem; margin:0; }
+    .anime-tile:hover{ transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.09); }
+    .controls { display:flex; gap:12px; align-items:center; margin-top:14px; flex-wrap:wrap; }
+    .mini {
+      display:flex; gap:8px; align-items:center;
+    }
+    .badge {
+      background:#fff2ea; padding:6px 8px; border-radius:8px; border:1px solid #ffdac9; font-weight:700; color:#ac6b59;
+    }
+    /* small responsive */
+    @media (max-width:720px){
+      .hero { flex-direction:column; text-align:center; }
+      .hero .visual { order:-1; width:100%; height:160px; border-radius:12px; background-position:center; background-size:cover; }
+    }
+  </style>
+
+  <!-- INDEX: hero-in-tile styles -->
+  <style>
+    /* Injected hero overlay inside each .tile-bg (translucent image that clears on hover) */
+    .tile-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
+    .tile-bg .tile-hero {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      pointer-events:none;
+      filter: blur(6px) brightness(.6) saturate(.95);
+      transform: scale(1.02);
+      transition: filter 220ms ease, transform 300ms ease, opacity 220ms ease;
+      opacity:0.98;
+      z-index:0;
+    }
+    /* on hover of the tile, clear the hero */
+    .anime-tile:hover .tile-bg .tile-hero,
+    .anime-tile:focus-within .tile-bg .tile-hero {
+      filter: blur(0px) brightness(1) saturate(1);
+      transform: scale(1);
+    }
+    /* ensure tile text sits above hero */
+    .anime-tile .tile-head,
+    .anime-tile .tile-desc { position:relative; z-index:2; }
+    /* missing label to show expected filename when hero absent */
+    .tile-bg .hero-missing {
+      position:absolute;
+      left:8px;
+      top:8px;
+      background: rgba(255,255,255,0.92);
+      color:#222;
+      padding:6px 8px;
+      border-radius:6px;
+      font-size:12px;
+      z-index:3;
+      pointer-events:none;
+    }
+  </style>
+
+<style id='index-button-fix'>
+/* INDEX-ONLY: ensure quick-action / browse / index buttons remain high-contrast and visible */
+body .button,
+body .quick-actions .button,
+body .browse-btn,
+body .index-actions .button,
+body .index-buttons .button {
+  background: #ff8b2e !important;   /* bright orange for index */
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+/* small hover */
+body .button:hover,
+body .quick-actions .button:hover,
+body .browse-btn:hover {
+  filter: brightness(1.06);
+}
+/* If some index buttons used .button but nested deeply, strengthen specificity */
+#index-header .button,
+#quick-actions .button { background: #ff8b2e !important; color:#fff !important; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="anime1.html">Naruto</a>
+      <a href="anime2.html">Demon Slayer</a>
+      <a href="anime3.html">One Piece</a>
+      <a href="anime4.html">Jujutsu Kaisen</a>
+      <a href="anime5.html">Attack on Titan</a>
+      <a href="anime6.html">Hell's Paradise</a>
+    </nav>
+
+    <header class="hero" role="banner" aria-labelledby="hero-title">
+      <div class="intro">
+        <h2 id="hero-title">Explore Worlds — Stories, Characters & Abilities</h2>
+        <p>Welcome — this project collects deep, story-like profiles for major anime. Click any card below to open the full anime page or jump straight into characters.</p>
+
+        <div class="controls" aria-hidden="false">
+          <div class="search-wrap" style="margin:8px 0 0 0; flex:1;">
+            <input id="site-search" type="search" placeholder="Search anime or characters (type to filter)..." aria-label="Search anime" />
+          </div>
+          <div class="mini">
+            <span class="badge">Local / Offline</span>
+            <a class="button" href="#anime-grid">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual" aria-hidden="true" style="width:320px; height:180px; border-radius:12px; background-image: url('images/index_hero.jpg'); background-size:cover; background-position:center;"></div>
+    </header>
+
+    <main class="section" id="anime-grid" role="main">
+      <h2 style="margin-top:0;">Featured Anime</h2>
+      <p class="muted">Tap a tile to open the anime page. Use search to quickly filter by name.</p>
+
+      <div class="anime-grid" id="animeTiles">
+        <!-- tile 1: Naruto -->
+        <a class="anime-tile" href="anime1.html" data-label="Naruto" aria-label="Open Naruto page">
+          <div class="tile-bg" style="background-image:url('images/anime1_card.jpg')"></div>
+          <div class="tile-head">Naruto</div>
+          <p class="tile-desc">A sprawling ninja saga of friendship, rivalry and the will to never give up.</p>
+        </a>
+
+        <!-- tile 2: Demon Slayer -->
+        <a class="anime-tile" href="anime2.html" data-label="Demon Slayer" aria-label="Open Demon Slayer page">
+          <div class="tile-bg" style="background-image:url('images/anime2_card.jpg')"></div>
+          <div class="tile-head">Demon Slayer</div>
+          <p class="tile-desc">A tale of sword breathing, fierce bonds, and fighting demons for family’s sake.</p>
+        </a>
+
+        <!-- tile 3: One Piece -->
+        <a class="anime-tile" href="anime3.html" data-label="One Piece" aria-label="Open One Piece page">
+          <div class="tile-bg" style="background-image:url('images/anime3_card.jpg')"></div>
+          <div class="tile-head">One Piece</div>
+          <p class="tile-desc">An epic pirate adventure — treasure hunts, vivid islands and loyal crews.</p>
+        </a>
+
+        <!-- tile 4: Jujutsu Kaisen -->
+        <a class="anime-tile" href="anime4.html" data-label="Jujutsu Kaisen" aria-label="Open Jujutsu Kaisen page">
+          <div class="tile-bg" style="background-image:url('images/anime4_card.jpg')"></div>
+          <div class="tile-head">Jujutsu Kaisen</div>
+          <p class="tile-desc">A thrilling modern occult story of curses, sorcery and personal struggle.</p>
+        </a>
+
+        <!-- tile 5: Attack on Titan -->
+        <a class="anime-tile" href="anime5.html" data-label="Attack on Titan" aria-label="Open Attack on Titan page">
+          <div class="tile-bg" style="background-image:url('images/anime5_card.jpg')"></div>
+          <div class="tile-head">Attack on Titan</div>
+          <p class="tile-desc">Humanity’s desperate fight against titans and the painful truths it uncovers.</p>
+        </a>
+
+        <!-- tile 6: Hell's Paradise -->
+        <a class="anime-tile" href="anime6.html" data-label="Hell's Paradise" aria-label="Open Hell's Paradise page">
+          <div class="tile-bg" style="background-image:url('images/anime6_card.jpg')"></div>
+          <div class="tile-head">Hell's Paradise</div>
+          <p class="tile-desc">A brutal island quest where death, myth and redemption collide.</p>
+        </a>
+      </div>
+
+      <section style="margin-top:26px;">
+        <h3>Quick Actions</h3>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+          <a class="button" href="characters/anime1_naruto.html">Open Naruto — Main Character</a>
+          <a class="button" href="anime5.html">Open Attack on Titan</a>
+          <a class="button" href="anime6.html">Open Hell's Paradise</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // tiny index-specific JS: filter anime tiles by user search
+    document.addEventListener('DOMContentLoaded', function(){
+      const search = document.getElementById('site-search');
+      const tiles = Array.from(document.querySelectorAll('.anime-tile'));
+      function filter(q){
+        q = q.trim().toLowerCase();
+        tiles.forEach(t => {
+          const label = (t.dataset.label || '').toLowerCase();
+          t.style.display = label.includes(q) ? '' : 'none';
+        });
+      }
+      if (search){
+        search.addEventListener('input', e => filter(e.target.value));
+        // also allow pressing / to focus search
+        document.addEventListener('keydown', e => {
+          if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+            e.preventDefault();
+            search.focus();
+          }
+        });
+      }
+      // tiny entrance animation
+      tiles.forEach((t,i) => {
+        t.style.opacity=0;
+        t.style.transform='translateY(12px)';
+        setTimeout(()=>{ t.style.transition='all .55s cubic-bezier(.2,.9,.3,1)'; t.style.opacity=1; t.style.transform='translateY(0)'; }, 80*i);
+      });
+    });
+  </script>
+
+  <!-- Injected script: add translucent hero <img> into each .tile-bg and show missing: label if absent -->
+  <script>
+  (function(){
+    // prefix used to lookup hero images. Change to '../images/' if index is in a subfolder.
+    const IMGPREFIX = 'images/';
+
+    function basenameFromHref(href){
+      if(!href) return null;
+      href = href.split('?')[0].split('#')[0];
+      const parts = href.replace(/\\/g,'/').split('/');
+      const fname = parts[parts.length-1] || parts[parts.length-2] || href;
+      return fname.replace(/\.[^.]+$/,''); // strip extension
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      const tiles = document.querySelectorAll('.anime-tile');
+      tiles.forEach(tile => {
+        // skip if already injected
+        if(tile.dataset.heroInjected) return;
+        tile.dataset.heroInjected = '1';
+
+        const bg = tile.querySelector('.tile-bg') || tile;
+        const href = tile.getAttribute('href') || tile.dataset.href;
+        let base = basenameFromHref(href);
+
+        if(!base){
+          // fallback to data-label or text
+          base = (tile.dataset.label || tile.querySelector('.tile-head')?.textContent || tile.textContent || 'anime').trim().toLowerCase().replace(/[^\w\s-]/g,'').replace(/\s+/g,'_');
+        }
+
+        // filename convention: <base>_hero.jpg (e.g. anime1_hero.jpg)
+        const heroName = `${base}_hero.jpg`;
+        const heroPath = IMGPREFIX + heroName;
+
+        const img = document.createElement('img');
+        img.className = 'tile-hero';
+        img.src = heroPath;
+        img.alt = (tile.dataset.label || base) + ' — hero';
+        img.setAttribute('aria-hidden','true');
+        img.loading = 'lazy';
+
+        img.onerror = function(){
+          try{ img.style.opacity = '0'; } catch(e){}
+          // add missing label once
+          if(!bg.querySelector('.hero-missing')){
+            const label = document.createElement('div');
+            label.className = 'hero-missing';
+            label.textContent = 'missing: ' + heroName;
+            bg.appendChild(label);
+          }
+        };
+
+        // insert as first child so background-image remains visible as fallback
+        bg.insertBefore(img, bg.firstChild);
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

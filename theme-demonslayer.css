@@ -1,0 +1,17 @@
+/* theme-demonslayer.css — sakura pink theme */
+:root{
+  --bg: linear-gradient(180deg,#fff7fb,#fff2f6);
+  --panel: #fff6fa;
+  --text: #42323a;
+  --muted: #8a6f79;
+  --accent: #ff9fc2;   /* sakura pink */
+  --accent-2: #ff6f98; /* deeper rose */
+  --card-bg: rgba(255,250,254,0.96);
+  --card-border: rgba(255,120,150,0.06);
+}
+
+/* subtle cherry blossom pattern on category tiles */
+.cat-tile::before{
+  content:"";
+  position:absolute; inset:0; background-image: radial-gradient(circle at 20% 10%, rgba(255,200,220,0.12) 0 10%, transparent 10%), radial-gradient(circle at 85% 80%, rgba(255,230,240,0.08) 0 12%, transparent 12%); pointer-events:none;
+}

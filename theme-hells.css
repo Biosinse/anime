@@ -1,0 +1,17 @@
+/* theme-hells.css — parchment / antique vibe */
+:root{
+  --bg: linear-gradient(180deg,#fffaf3,#fbf5ec);
+  --panel: #fff7ef;
+  --text: #453a30;
+  --muted: #857164;
+  --accent: #d9a86f;   /* parchment gold */
+  --accent-2: #c78f50; /* antique brown */
+  --card-bg: rgba(255,250,244,0.96);
+  --card-border: rgba(160,120,75,0.05);
+}
+
+/* parchment subtle vignette on tiles */
+.char-block::before {
+  content:"";
+  position:absolute; inset:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(200,160,110,0.02), transparent 20%); pointer-events:none;
+}

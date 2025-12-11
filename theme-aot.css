@@ -1,0 +1,15 @@
+/* theme-aot.css — sepia / war map */
+:root{
+  --bg: linear-gradient(180deg,#fbfaf8,#f6f1ea);
+  --panel: #fff9f3;
+  --text: #3b2f28;
+  --muted: #847061;
+  --accent: #b5895b;   /* sepia */
+  --accent-2: #8e6f46; /* darker sepia */
+  --card-bg: rgba(255,251,244,0.97);
+  --card-border: rgba(100,70,45,0.06);
+}
+
+/* optional: faux-paper texture on big hero elements */
+header { background-image: linear-gradient(90deg, rgba(190,160,120,0.03), transparent); }
+.char-hover-grid .char-block { border-radius:10px; }

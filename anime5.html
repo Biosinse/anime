@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Attack on Titan — The Fall and the Reckoning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --hero-blur-default: 3px;
+      --hero-bright-default: .86;
+      --hero-saturate-default: .98;
+      --hero-contrast-default: 1.02;
+
+      --hero-blur-hover: 0px;
+      --hero-bright-hover: 1.02;
+      --hero-saturate-hover: 1.06;
+      --hero-contrast-hover: 1.03;
+
+      --card-w: 220px;
+      --card-h: 160px;
+      --gap: 14px;
+
+      --bg: #faf5ec;
+      --accent: #b68f63;
+      --muted: #786556;
+    }
+
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:18px; background:var(--bg); color:#3b2e25; }
+    .container { max-width:1000px; margin:0 auto; }
+    nav.site-nav a { margin-right:10px; color:var(--accent); text-decoration:none; font-weight:600; }
+    header h1 { margin:0 0 6px; font-size:1.5rem; }
+    header p.muted { margin:0 0 18px; color:var(--muted); }
+
+    .char-hover-grid { display:flex; flex-wrap:wrap; gap:var(--gap); align-items:flex-start; }
+    .char-block {
+      width:var(--card-w); height:var(--card-h); border-radius:10px; overflow:hidden; position:relative;
+      display:inline-flex; align-items:flex-end; padding:12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,250,249,0.96));
+      border:1px solid rgba(0,0,0,0.04); text-decoration:none; color:inherit; transition: transform .28s, box-shadow .22s;
+    }
+    .char-block:hover { transform: translateY(-8px); box-shadow: 0 18px 36px rgba(0,0,0,0.09); }
+
+    .char-block .bg { position:absolute; inset:0; z-index:0; background-size:cover; background-position:center; }
+    .char-block .bg img.card-hero {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none;
+      filter: blur(var(--hero-blur-default)) brightness(var(--hero-bright-default)) saturate(var(--hero-saturate-default)) contrast(var(--hero-contrast-default));
+      transform: scale(1.02); transition: filter .22s ease, transform .22s ease, opacity .18s ease; z-index:3; opacity:1;
+    }
+    .char-block:hover .bg img.card-hero,
+    .char-block:focus-within .bg img.card-hero {
+      filter: blur(var(--hero-blur-hover)) brightness(var(--hero-bright-hover)) saturate(var(--hero-saturate-hover)) contrast(var(--hero-contrast-hover));
+      transform: scale(1);
+    }
+
+    .char-block .label { position:relative; z-index:4; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45); padding:6px 8px; border-radius:8px; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25)); margin-left:8px; }
+    .char-block .missing { position:absolute; left:8px; top:8px; z-index:5; display:none; background: rgba(255,255,255,0.95); color:#b33; font-weight:700; padding:6px 8px; border-radius:6px; font-size:12px; }
+
+    @media (max-width:760px){ :root{ --card-w: calc(50% - 12px); } .char-block { width: calc(50% - 12px); height:150px; } }
+    @media (max-width:420px){ :root{ --card-w: 100%; } .char-block { width:100%; height:140px; } }
+
+    .button { background:var(--accent); color:#fff; padding:.6rem .85rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">All Animes</a>
+      <a href="anime5.html">Attack on Titan</a>
+    </nav>
+
+    <header>
+      <h1>Attack on Titan — A Chronicle of Walls, War, and the Human Cost</h1>
+      <p class="muted">A long-form narrative overview.</p>
+    </header>
+
+    <main class="section">
+      <section style="margin-top:20px;">
+        <h3>Dive into Characters</h3>
+        <div class="char-hover-grid">
+          <a class="char-block" href="characters/anime5_annie.html"><div class="bg" style="background-image:url('images/annie_card.jpg')"><img class="card-hero" src="images/anime5_annie_hero.jpg" alt="Annie — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Annie</div><div class="missing">missing: anime5_annie_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_armin.html"><div class="bg" style="background-image:url('images/armin_card.jpg')"><img class="card-hero" src="images/anime5_armin_hero.jpg" alt="Armin — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Armin</div><div class="missing">missing: anime5_armin_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_connie.html"><div class="bg" style="background-image:url('images/connie_card.jpg')"><img class="card-hero" src="images/anime5_connie_hero.jpg" alt="Connie — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Connie</div><div class="missing">missing: anime5_connie_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_eren.html"><div class="bg" style="background-image:url('images/eren_card.jpg')"><img class="card-hero" src="images/anime5_eren_hero.jpg" alt="Eren — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Eren</div><div class="missing">missing: anime5_eren_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_erwin.html"><div class="bg" style="background-image:url('images/erwin_card.jpg')"><img class="card-hero" src="images/anime5_erwin_hero.jpg" alt="Erwin — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Erwin</div><div class="missing">missing: anime5_erwin_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_falco.html"><div class="bg" style="background-image:url('images/falco_card.jpg')"><img class="card-hero" src="images/anime5_falco_hero.jpg" alt="Falco — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Falco</div><div class="missing">missing: anime5_falco_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_floch.html"><div class="bg" style="background-image:url('images/floch_card.jpg')"><img class="card-hero" src="images/anime5_floch_hero.jpg" alt="Floch — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Floch</div><div class="missing">missing: anime5_floch_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_gabi.html"><div class="bg" style="background-image:url('images/gabi_card.jpg')"><img class="card-hero" src="images/anime5_gabi_hero.jpg" alt="Gabi — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Gabi</div><div class="missing">missing: anime5_gabi_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_hange.html"><div class="bg" style="background-image:url('images/hange_card.jpg')"><img class="card-hero" src="images/anime5_hange_hero.jpg" alt="Hange — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Hange</div><div class="missing">missing: anime5_hange_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_hannes.html"><div class="bg" style="background-image:url('images/hannes_card.jpg')"><img class="card-hero" src="images/anime5_hannes_hero.jpg" alt="Hannes — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Hannes</div><div class="missing">missing: anime5_hannes_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_historia.html"><div class="bg" style="background-image:url('images/historia_card.jpg')"><img class="card-hero" src="images/anime5_historia_hero.jpg" alt="Historia — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Historia</div><div class="missing">missing: anime5_historia_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_jean.html"><div class="bg" style="background-image:url('images/jean_card.jpg')"><img class="card-hero" src="images/anime5_jean_hero.jpg" alt="Jean — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Jean</div><div class="missing">missing: anime5_jean_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_levi.html"><div class="bg" style="background-image:url('images/levi_card.jpg')"><img class="card-hero" src="images/anime5_levi_hero.jpg" alt="Levi — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Levi</div><div class="missing">missing: anime5_levi_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_mikasa.html"><div class="bg" style="background-image:url('images/mikasa_card.jpg')"><img class="card-hero" src="images/anime5_mikasa_hero.jpg" alt="Mikasa — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Mikasa</div><div class="missing">missing: anime5_mikasa_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_pieck.html"><div class="bg" style="background-image:url('images/pieck_card.jpg')"><img class="card-hero" src="images/anime5_pieck_hero.jpg" alt="Pieck — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Pieck</div><div class="missing">missing: anime5_pieck_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_porco.html"><div class="bg" style="background-image:url('images/porco_card.jpg')"><img class="card-hero" src="images/anime5_porco_hero.jpg" alt="Porco — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Porco</div><div class="missing">missing: anime5_porco_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_reiner.html"><div class="bg" style="background-image:url('images/reiner_card.jpg')"><img class="card-hero" src="images/anime5_reiner_hero.jpg" alt="Reiner — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Reiner</div><div class="missing">missing: anime5_reiner_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_sasha.html"><div class="bg" style="background-image:url('images/sasha_card.jpg')"><img class="card-hero" src="images/anime5_sasha_hero.jpg" alt="Sasha — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Sasha</div><div class="missing">missing: anime5_sasha_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_ymir.html"><div class="bg" style="background-image:url('images/ymir_card.jpg')"><img class="card-hero" src="images/anime5_ymir_hero.jpg" alt="Ymir — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Ymir</div><div class="missing">missing: anime5_ymir_hero.jpg</div></a>
+
+          <a class="char-block" href="characters/anime5_zeke.html"><div class="bg" style="background-image:url('images/zeke_card.jpg')"><img class="card-hero" src="images/anime5_zeke_hero.jpg" alt="Zeke — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Zeke</div><div class="missing">missing: anime5_zeke_hero.jpg</div></a>
+        </div>
+
+        <p style="margin-top:16px;"><a class="button" href="index.html">Back to Index</a></p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.char-block').forEach(block => {
+        const img = block.querySelector('img.card-hero');
+        const missing = block.querySelector('.missing');
+        if(!img) return;
+        if(!img.complete || img.naturalWidth === 0) { if(missing) missing.style.display = 'block'; }
+        img.addEventListener('error', () => { if(missing) missing.style.display = 'block'; });
+        img.addEventListener('load', () => { if(missing) missing.style.display = 'none'; });
+      });
+    });
+  </script>
+</body>
+</html>

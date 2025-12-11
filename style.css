@@ -1,0 +1,330 @@
+/* --------------------------------------------
+   WARM AESTHETIC THEME / LIGHT MODE
+   Soft beige, peach, rose, latte tones
+   Minimal + modern + aesthetic
+--------------------------------------------- */
+
+:root{
+  --bg-light: #f9f4ef;            /* warm cream background */
+  --panel: #fff7f1;               /* soft pastel panel */
+  --panel-strong: #ffeede;        /* slightly deeper pastel */
+  --text: #43322d;                /* warm dark brown text */
+  --muted: #7c6a64;               /* warm muted brown */
+  --accent: #ff9b73;              /* peach/coral highlight */
+  --accent-2: #e46c5b;            /* warm terracotta */
+  --radius: 14px;
+  --shadow-soft: 0 6px 20px rgba(0,0,0,0.08);
+  --shadow-strong: 0 12px 32px rgba(0,0,0,0.12);
+  --focus: 2px solid rgba(228,108,91,0.40);
+}
+
+/* ---------------- Base layout ---------------- */
+html,body{
+  margin:0;
+  padding:0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(180deg, #fefbf7, var(--bg-light));
+  color:var(--text);
+  -webkit-font-smoothing: antialiased;
+  font-size:16px;
+  line-height:1.6;
+}
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:24px auto;
+  padding:28px;
+  background:var(--panel);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  border:1px solid rgba(255,255,255,0.6);
+}
+
+/* ---------------- Navigation ---------------- */
+.site-nav{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.site-nav a{
+  text-decoration:none;
+  color:var(--text);
+  background:#fff1e2;
+  padding:8px 14px;
+  border-radius:var(--radius);
+  border:1px solid #ffe4d4;
+  font-weight:600;
+  transition:0.2s;
+}
+.site-nav a:hover{
+  background:#ffe4d4;
+  transform: translateY(-2px);
+  box-shadow:var(--shadow-soft);
+}
+
+/* ---------------- Headers ---------------- */
+header h1{
+  margin:0 0 6px;
+  font-size:clamp(20px, 3vw, 32px);
+  font-weight:700;
+  color:#402e29;
+}
+
+.muted{ color: var(--muted); }
+
+/* ---------------- Content ---------------- */
+.section article h2{
+  font-size:1.3rem;
+  margin-top:20px;
+  color:#5c3b33;
+}
+
+.section article p{
+  margin:12px 0;
+  text-align:justify;
+}
+
+/* ---------------- Buttons ---------------- */
+.button{
+  display:inline-block;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  color:white;
+  padding:10px 16px;
+  font-weight:700;
+  border-radius:var(--radius);
+  text-decoration:none;
+  box-shadow:var(--shadow-soft);
+  transition:0.2s;
+}
+.button:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-strong);
+}
+
+/* ---------------- Character Grid ---------------- */
+.char-hover-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+  margin-top:18px;
+}
+
+.char-block{
+  position:relative;
+  display:block;
+  height:200px;
+  text-decoration:none;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--panel-strong);
+  border:1px solid #f8d9c5;
+  box-shadow:0 3px 14px rgba(0,0,0,0.08);
+  transition:0.25s;
+}
+
+.char-block .bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0.88;
+  filter:brightness(0.92);
+  transition:0.25s;
+}
+
+.char-block .label{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  right:12px;
+  padding:10px 14px;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter: blur(4px);
+  color:#533a33;
+  border-radius:var(--radius);
+  font-weight:600;
+  font-size:1rem;
+  box-shadow:var(--shadow-soft);
+  z-index:2;
+}
+
+/* Hover aesthetics (soft warm glow) */
+.char-block:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:var(--shadow-strong);
+  background:#ffe9df;
+}
+.char-block:hover .bg{
+  opacity:1;
+  filter:brightness(1);
+  transform:scale(1.06);
+}
+
+/* ---------------- Category Tiles ---------------- */
+.cat-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:20px;
+}
+
+.cat-tile{
+  width:calc(33.333% - 12px);
+  min-width:180px;
+  height:130px;
+  background:var(--panel-strong);
+  border-radius:var(--radius);
+  padding:14px;
+  display:flex;
+  align-items:flex-end;
+  text-decoration:none;
+  color:var(--text);
+  border:1px solid #ffd8c4;
+  position:relative;
+  overflow:hidden;
+  transition:0.25s;
+}
+
+.cat-tile .cat-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0.15;
+}
+
+.cat-tile:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-strong);
+}
+
+.cat-name{
+  position:relative;
+  z-index:3;
+  font-weight:700;
+  font-size:1.05rem;
+  background:rgba(255,255,255,0.7);
+  padding:6px 10px;
+  border-radius:var(--radius);
+}
+
+/* ---------------- Search Bar ---------------- */
+.search-wrap{
+  margin:14px 0;
+  display:flex;
+  gap:12px;
+}
+.search-wrap input{
+  padding:10px 14px;
+  flex:1;
+  border:1px solid #ffd8c4;
+  background:white;
+  border-radius:var(--radius);
+  color:var(--text);
+}
+.search-wrap input:focus{
+  outline:var(--focus);
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width:700px){
+  .cat-tile{ width:100%; }
+  .char-block{ height:170px; }
+  .container{ padding:20px; }
+}
+/* ---------------- Extra UI: smooth scroll, loader, BGM toggle, small helpers ---------------- */
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Default theme variables (light, safe) */
+:root {
+  --site-bg: var(--bg, #fffaf7);
+  --site-panel: var(--panel, #fff7f1);
+  --accent: var(--accent, #ff9b73);
+  --text-primary: var(--text, #43322d);
+}
+
+/* Loading overlay */
+#site-loader {
+  position: fixed;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(250,245,240,0.95), rgba(250,245,240,0.92));
+  z-index: 9999;
+  transition: opacity .5s ease, visibility .4s;
+}
+#site-loader.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+
+/* spinner */
+.loader-wrap {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 22px;
+  background: white;
+  border-radius:14px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.04);
+}
+.loader-dot {
+  width:12px; height:12px; border-radius:50%;
+  background: var(--accent);
+  animation: loader-bounce 0.9s infinite ease-in-out;
+}
+.loader-dot:nth-child(2){ animation-delay: .12s; }
+.loader-dot:nth-child(3){ animation-delay: .24s; }
+@keyframes loader-bounce {
+  0%,80%,100%{ transform: translateY(0); }
+  40%{ transform: translateY(-8px); }
+}
+
+/* BGM toggle */
+.bgm-toggle {
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 10px;
+  border-radius:10px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.04);
+  cursor:pointer;
+  font-weight:700;
+}
+.bgm-toggle[aria-pressed="true"] {
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent), white 30%));
+  color: white;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+/* small disabled state */
+.bgm-toggle[aria-disabled="true"] { opacity:0.5; cursor:not-allowed; }
+
+/* small accessible focus */
+.bgm-toggle:focus { outline: 3px solid rgba(0,0,0,0.06); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+/* subtle hover tile ring for keyboard users */
+.tile:focus-visible,
+.char-block:focus-visible {
+  outline: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.09), 0 0 0 4px rgba(255,155,115,0.12);
+  transform: translateY(-6px);
+}
+/* INDEX PAGE BUTTON FIX   prevents theme colors from overriding */
+.index-buttons a,
+.index-buttons button {
+    background: #ff8b2e !important;
+    color: #ffffff !important;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.index-buttons a:hover,
+.index-buttons button:hover {
+    filter: brightness(1.08);
+}
