@@ -56,6 +56,17 @@
       z-index:0;
       filter: blur(2px);
     }
+/* --- CLEARER HERO-LIKE BLUR + HOVER EFFECT --- */
+.card .bg{
+  filter: blur(1px) brightness(0.95) saturate(1);
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.card:hover .bg{
+  filter: blur(0px) brightness(1.08) saturate(1.1);
+  transform: scale(1.04);
+}
+
     .card .overlay {
       position:absolute; inset:0; z-index:1;
       background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
@@ -85,8 +96,7 @@
   <div class="container">
     <header>
       <h1>Naruto - Complete Story</h1>
-      <p class="muted">A focused narrative summary suitable for your school project - long, cohesive, and written as a flowing story. Scroll down to "Dive into characters" to explore categories and then each character page.</p>
-    </header>
+      </header>
 
     <main>
       <section class="section">
@@ -116,14 +126,12 @@
           In the end, victory was not a triumphal crown but a responsibility accepted. Naruto became Hokage not to rule but to protect, to remember the loneliness of the child he had been, and to shepherd institutions toward justice instead of fear. The Nine-Tails' roar faded into a companion's breath; a village that once spat now cheered, healed imperfectly but sincerely. Naruto's story is an arc of transformation: from spectacle to servant, from a boy who wanted to be seen to a man who made sure others were seen. That shift-small, stubborn, human-remains the heart of the tale.
         </p>
 
-        <p class="small muted">If you only submit one page, use this as the main Naruto overview. For character details, click any category below to go to the category page and then open a character's individual page.</p>
-      </section>
+       </section>
 
       <!-- Dive into Characters: category hover cards -->
       <section class="section">
         <h2>Dive into Characters</h2>
-        <p class="small muted">Click a category card to open the category page with clickable character names.</p>
-
+        
         <div class="cards" role="list">
           <a class="card" href="anime1_team7.html" role="listitem" title="Team 7 & main protagonists">
             <div class="bg" style="background-image:url('images/cat_team7.jpg')"></div>
@@ -189,8 +197,7 @@
           </a>
         </div>
 
-        <p class="small muted" style="margin-top:12px;">(Optional) If you want the card images to appear, save images named: <code>cat_team7.jpg</code>, <code>cat_sannin.jpg</code>, <code>cat_uchiha.jpg</code>, <code>cat_akatsuki.jpg</code>, <code>cat_jinchuriki.jpg</code>, <code>cat_konoha.jpg</code>, <code>cat_hokage.jpg</code>, <code>cat_villains.jpg</code>, <code>cat_summons.jpg</code> into the <code>images/</code> folder. If not present, cards still display with gradient background.</p>
-      </section>
+       </section>
 
       <div class="footer">
         <p><a class="button" href="index.html">Back to Home</a> <a class="button button-alt" href="index.html">All anime</a></p>
