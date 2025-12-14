@@ -136,35 +136,31 @@ body .browse-btn:hover {
 </head>
 <body>
   <div class="container">
-    <nav class="site-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="anime1.html">Naruto</a>
-      <a href="anime2.html">Demon Slayer</a>
-      <a href="anime3.html">One Piece</a>
-      <a href="anime4.html">Jujutsu Kaisen</a>
-      <a href="anime5.html">Attack on Titan</a>
-      <a href="anime6.html">Hell's Paradise</a>
-    </nav>
+   <nav class="site-nav" aria-label="Main"
+     style="display:flex; align-items:center; justify-content:space-between;">
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <a href="index.html">Home</a>
+    <a href="anime1.html">Naruto</a>
+    <a href="anime2.html">Demon Slayer</a>
+    <a href="anime3.html">One Piece</a>
+    <a href="anime4.html">Jujutsu Kaisen</a>
+    <a href="anime5.html">Attack on Titan</a>
+    <a href="anime6.html">Hell's Paradise</a>
+  </div>
 
-    <header class="hero" role="banner" aria-labelledby="hero-title">
-      <div class="intro">
-        <h2 id="hero-title">Explore Worlds — Stories, Characters & Abilities</h2>
-        <p>Welcome — this project collects deep, story-like profiles for major anime. Click any card below to open the full anime page or jump straight into characters.</p>
+  <input id="site-search" type="search"
+    placeholder="Search anime or characters..."
+    aria-label="Search anime"
+    style="
+      width:220px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid #ffd7c4;
+      background:rgba(255,255,255,0.9);
+    " />
+</nav>
 
-        <div class="controls" aria-hidden="false">
-          <div class="search-wrap" style="margin:8px 0 0 0; flex:1;">
-            <input id="site-search" type="search" placeholder="Search anime or characters (type to filter)..." aria-label="Search anime" />
-          </div>
-          <div class="mini">
-            <span class="badge">Local / Offline</span>
-            <a class="button" href="#anime-grid">Browse</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="visual" aria-hidden="true" style="width:320px; height:180px; border-radius:12px; background-image: url('images/index_hero.jpg'); background-size:cover; background-position:center;"></div>
-    </header>
-
+    
     <main class="section" id="anime-grid" role="main">
       <h2 style="margin-top:0;">Featured Anime</h2>
       <p class="muted">Tap a tile to open the anime page. Use search to quickly filter by name.</p>

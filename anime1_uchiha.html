@@ -9,6 +9,25 @@
 <style>
 /* Naruto button theme (injected for anime1_*.html) */
 .button {
+/* --- FIX: make character card images visible --- */
+.char-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.char-block .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.char-block .label {
+  position: relative;
+  z-index: 2;
+}
+
   background: #FF8B2E !important;
   color: #FFFFFF !important;
   border: none !important;
