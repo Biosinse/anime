@@ -27,11 +27,25 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #FF8B2E !important; border: 1px solid rgba(0,0,0,0.06) !important; }
-</style>
-</head>
+/* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
 
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
+</style>
+
+</head>
 <body>
-<!-- SITE NAV INSERTED -->
 <nav class="site-nav" aria-label="Main site navigation">
   <a href="index.html">All Animes</a>
   <a href="anime1.html">Naruto Home</a>
@@ -95,6 +109,13 @@
           <li><strong>Six Paths Power (Temporary)</strong> ' In the final war, he temporarily receives dual Mangeky abilities and manifests a powerful Susanoo.</li>
         </ul>
       </section>
+
+<div class="character-profile">
+  <img 
+    src="../images/anime1_kakashi_profile.jpg"
+    alt="Kakashi Hatake profile card"
+  />
+</div>
 
       <section class="section">
         <h2>Images & GIFs (internet links)</h2>
