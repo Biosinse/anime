@@ -27,6 +27,21 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #FF8B2E !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+/* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
 </style>
 </head>
 
@@ -89,20 +104,14 @@
         </ul>
       </section>
 
-      <section class="section">
-        <h2>Images & GIFs (internet links)</h2>
-        <ul style="color:var(--muted)">
-          <li><a href="https://giphy.com/search/konan-naruto" style="color:var(--accent)">GIPHY - Konan GIFs</a></li>
-          <li><a href="https://www.zerochan.net/Konan" style="color:var(--accent)">Zerochan - Konan images</a></li>
-          <li><a href="https://www.deviantart.com/tag/konan" style="color:var(--accent)">DeviantArt - Konan Art</a></li>
-        </ul>
-      </section>
+     <div class="character-profile">
+  <img 
+    src="../images/anime1_Konan_profile.jpg"
+    alt="Konan profile card"
+  />
 
-      <div class="footer">
-        <p><a href="../anime1.html" style="color:var(--accent)">Back to Naruto page</a> |
-        <a href="../index.html" style="color:var(--accent)">Home</a></p>
-      </div>
 
+      
     </main>
 
   </div>

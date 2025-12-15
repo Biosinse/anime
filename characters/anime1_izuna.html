@@ -27,7 +27,23 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #FF8B2E !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+/* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
 </style>
+
 </head>
 <body>
 <nav class="site-nav">
@@ -151,13 +167,12 @@
     by those whose voices are lost too soon.
   </p>
 </section>
+<div class="character-profile">
+  <img 
+    src="../images/anime1_Izuna_profile.jpg"
+    alt="Izuna profile card"
+  />
 
-
-    <footer class="page-buttons">
-      <a class="button" href="../anime1.html">Back to Naruto</a>
-      <a class="button" href="../index.html">Back to Index</a>
-    </footer>
-  </article>
 </main>
 </body>
 </html>

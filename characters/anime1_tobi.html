@@ -27,6 +27,21 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #FF8B2E !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+/* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
 </style>
 </head>
 
@@ -89,20 +104,11 @@
         </ul>
       </section>
 
-      <section class="section">
-        <h2>Images & GIFs (internet links)</h2>
-        <ul style="color:var(--muted)">
-          <li><a href="https://giphy.com/search/tobi-naruto" style="color:var(--accent)">GIPHY - Tobi GIFs</a></li>
-          <li><a href="https://giphy.com/search/obito" style="color:var(--accent)">GIPHY - Obito GIFs</a></li>
-          <li><a href="https://www.zerochan.net/Obito+Uchiha" style="color:var(--accent)">Zerochan - Obito images</a></li>
-          <li><a href="https://www.deviantart.com/tag/obito" style="color:var(--accent)">DeviantArt - Obito art</a></li>
-        </ul>
-      </section>
-
-      <div class="footer">
-        <p><a href="../anime1.html" style="color:var(--accent)">Back to Naruto page</a> |
-        <a href="../index.html" style="color:var(--accent)">Home</a></p>
-      </div>
+      <div class="character-profile">
+  <img 
+    src="../images/anime1_tobi_profile.jpg"
+    alt="tobi profile card"
+  />
 
     </main>
 
