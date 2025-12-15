@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
   <style>
-    /* small page-specific additions for the index */
-    .hero {
+    {
       display:flex;
       gap:18px;
       align-items:center;
@@ -65,10 +64,8 @@
     }
   </style>
 
-  <!-- INDEX: hero-in-tile styles -->
-  <style>
-    /* Injected hero overlay inside each .tile-bg (translucent image that clears on hover) */
-    .tile-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
+   <style>
+       .tile-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
     .tile-bg .tile-hero {
       position:absolute;
       inset:0;
@@ -83,17 +80,15 @@
       opacity:0.98;
       z-index:0;
     }
-    /* on hover of the tile, clear the hero */
-    .anime-tile:hover .tile-bg .tile-hero,
+       .anime-tile:hover .tile-bg .tile-hero,
     .anime-tile:focus-within .tile-bg .tile-hero {
       filter: blur(0px) brightness(1) saturate(1);
       transform: scale(1);
     }
-    /* ensure tile text sits above hero */
+   
     .anime-tile .tile-head,
     .anime-tile .tile-desc { position:relative; z-index:2; }
-    /* missing label to show expected filename when hero absent */
-    .tile-bg .hero-missing {
+       .tile-bg .hero-missing {
       position:absolute;
       left:8px;
       top:8px;
@@ -108,7 +103,7 @@
   </style>
 
 <style id='index-button-fix'>
-/* INDEX-ONLY: ensure quick-action / browse / index buttons remain high-contrast and visible */
+
 body .button,
 body .quick-actions .button,
 body .browse-btn,
@@ -123,15 +118,28 @@ body .index-buttons .button {
   text-decoration: none !important;
   display: inline-block !important;
 }
-/* small hover */
 body .button:hover,
 body .quick-actions .button:hover,
 body .browse-btn:hover {
   filter: brightness(1.06);
 }
-/* If some index buttons used .button but nested deeply, strengthen specificity */
-#index-header .button,
-#quick-actions .button { background: #ff8b2e !important; color:#fff !important; }
+</style>
+
+<style>
+    body {
+    background-color: #fafafa;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0,0,0,0.02),
+        rgba(0,0,0,0.02) 1px,
+        transparent 1px,
+        transparent 14px
+      );
+    background-attachment: fixed;
+  }
+</style>
+
 </style>
 </head>
 <body>
