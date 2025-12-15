@@ -27,6 +27,21 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #8B63E6 !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
 </style>
 </head>
 <body>
@@ -53,7 +68,11 @@
         His interventions often tip the balance in close battles; his unique curse speech allows for creative tactics that otherwise would be impossible. Toge also introduces themes about communication and responsibility what words cost and what silence buys.
       </p>
 
-      <p style="margin-top:16px;"><a class="button" href="../anime4.html">Back to Jujutsu Kaisen</a></p>
+      <div class="character-profile">
+  <img 
+    src="../images/anime1_kakashi_profile.jpg"
+    alt="Kakashi Hatake profile card"
+</div>
     </main>
   </div>
 </body>
