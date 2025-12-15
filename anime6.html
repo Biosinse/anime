@@ -59,6 +59,28 @@
 
     .button { background:var(--accent); color:#fff; padding:.6rem .85rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
   </style>
+<style>
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/anime6_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 245, 230, 0.88);
+  z-index: -1;
+}
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -71,7 +93,7 @@
       <h1>Hell's Paradise - Jigokuraku</h1>
       <p class="muted">A long-form narrative overview.</p>
     </header>
-<!-- ================= STORY SECTION ================= -->
+
 <section class="story-section" style="margin-top:18px; line-height:1.65;">
   <h2>The Island Where Death Blossoms</h2>
 
@@ -153,8 +175,6 @@
     <em>Can something beautiful grow from a life stained by sin?</em>
   </p>
 </section>
-<!-- ================= END STORY SECTION ================= -->
-
 
     <main class="section">
       <section style="margin-top:18px;">

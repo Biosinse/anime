@@ -64,13 +64,13 @@
     }
     .char-block:hover { transform: translateY(-8px); box-shadow: 0 18px 36px rgba(0,0,0,0.09); }
 
-    /* fallback background (kept inline) */
+   
     .char-block .bg {
       position:absolute; inset:0; z-index:0;
       background-size:cover; background-position:center;
     }
 
-    /* HERO IMAGE overlay (on top of fallback) */
+   
     .char-block .bg img.card-hero {
       position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
       pointer-events:none;
@@ -86,7 +86,7 @@
       transform: scale(1);
     }
 
-    /* label overlay */
+   
     .char-block .label {
       position:relative; z-index:4;
       font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);
@@ -94,17 +94,17 @@
       margin-left:8px;
     }
 
-    /* missing badge */
+
     .char-block .missing {
       position:absolute; left:8px; top:8px; z-index:5; display:none;
       background: rgba(255,255,255,0.95); color:#b33; font-weight:700;
       padding:6px 8px; border-radius:6px; font-size:12px; box-shadow:0 2px 6px rgba(0,0,0,0.06);
     }
 
-    /* ensure label sits above hero */
+ 
     .char-block .label { z-index:4; }
 
-    /* responsive */
+   
     @media (max-width:760px){
       :root { --card-w: calc(50% - 12px); }
       .char-block { width: calc(50% - 12px); height:150px; }
@@ -114,9 +114,31 @@
       .char-block { width:100%; height:140px; }
     }
 
-    /* small button style (kept simple) */
+
     .button { background:var(--accent); color:#fff; padding:.6rem .85rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
   </style>
+<style>
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/anime2_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 245, 230, 0.88);
+  z-index: -1;
+}
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -182,7 +204,7 @@
           <!-- Tanjirō -->
           <a class="char-block" href="characters/anime2_tanjiro.html" title="Tanjirō Kamado">
             <div class="bg" style="background-image:url('images/anime2_tanjiro_card.jpg')">
-              <img class="card-hero" src="images/anime2_tanjiro_hero.jpg" alt="Tanjirō Kamado — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_tanjiro_hero.jpg" alt="Tanjirō Kamado -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Tanjirō Kamado</div>
             <div class="missing">missing: anime2_tanjiro_hero.jpg</div>
@@ -191,7 +213,7 @@
           <!-- Nezuko -->
           <a class="char-block" href="characters/anime2_nezuko.html" title="Nezuko Kamado">
             <div class="bg" style="background-image:url('images/anime2_nezuko_card.jpg')">
-              <img class="card-hero" src="images/anime2_nezuko_hero.jpg" alt="Nezuko Kamado — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_nezuko_hero.jpg" alt="Nezuko Kamado -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Nezuko Kamado</div>
             <div class="missing">missing: anime2_nezuko_hero.jpg</div>
@@ -200,7 +222,7 @@
           <!-- Zenitsu -->
           <a class="char-block" href="characters/anime2_zenitsu.html" title="Zenitsu Agatsuma">
             <div class="bg" style="background-image:url('images/anime2_zenitsu_card.jpg')">
-              <img class="card-hero" src="images/anime2_zenitsu_hero.jpg" alt="Zenitsu Agatsuma — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_zenitsu_hero.jpg" alt="Zenitsu Agatsuma -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Zenitsu Agatsuma</div>
             <div class="missing">missing: anime2_zenitsu_hero.jpg</div>
@@ -209,7 +231,7 @@
           <!-- Inosuke -->
           <a class="char-block" href="characters/anime2_inosuke.html" title="Inosuke Hashibira">
             <div class="bg" style="background-image:url('images/anime2_inosuke_card.jpg')">
-              <img class="card-hero" src="images/anime2_inosuke_hero.jpg" alt="Inosuke Hashibira — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_inosuke_hero.jpg" alt="Inosuke Hashibira -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Inosuke Hashibira</div>
             <div class="missing">missing: anime2_inosuke_hero.jpg</div>
@@ -218,7 +240,7 @@
           <!-- Giyu -->
           <a class="char-block" href="characters/anime2_giyu.html" title="Giyu Tomioka">
             <div class="bg" style="background-image:url('images/anime2_giyu_card.jpg')">
-              <img class="card-hero" src="images/anime2_giyu_hero.jpg" alt="Giyu Tomioka — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_giyu_hero.jpg" alt="Giyu Tomioka -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Giyu Tomioka</div>
             <div class="missing">missing: anime2_giyu_hero.jpg</div>
@@ -227,7 +249,7 @@
           <!-- Shinobu -->
           <a class="char-block" href="characters/anime2_shinobu.html" title="Shinobu Kocho">
             <div class="bg" style="background-image:url('images/anime2_shinobu_card.jpg')">
-              <img class="card-hero" src="images/anime2_shinobu_hero.jpg" alt="Shinobu Kocho — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_shinobu_hero.jpg" alt="Shinobu Kocho -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Shinobu Kocho</div>
             <div class="missing">missing: anime2_shinobu_hero.jpg</div>
@@ -236,7 +258,7 @@
           <!-- Kyojuro -->
           <a class="char-block" href="characters/anime2_kyojuro.html" title="Kyojuro Rengoku">
             <div class="bg" style="background-image:url('images/anime2_kyojuro_card.jpg')">
-              <img class="card-hero" src="images/anime2_kyojuro_hero.jpg" alt="Kyojuro Rengoku — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_kyojuro_hero.jpg" alt="Kyojuro Rengoku -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Kyojuro Rengoku</div>
             <div class="missing">missing: anime2_kyojuro_hero.jpg</div>
@@ -245,7 +267,7 @@
           <!-- Muichiro -->
           <a class="char-block" href="characters/anime2_muichiro.html" title="Muichirō Tokitō">
             <div class="bg" style="background-image:url('images/anime2_muichiro_card.jpg')">
-              <img class="card-hero" src="images/anime2_muichiro_hero.jpg" alt="Muichirō Tokitō — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_muichiro_hero.jpg" alt="Muichirō Tokitō -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Muichirō Tokitō</div>
             <div class="missing">missing: anime2_muichiro_hero.jpg</div>
@@ -254,7 +276,7 @@
           <!-- Mitsuri -->
           <a class="char-block" href="characters/anime2_mitsuri.html" title="Mitsuri Kanroji">
             <div class="bg" style="background-image:url('images/anime2_mitsuri_card.jpg')">
-              <img class="card-hero" src="images/anime2_mitsuri_hero.jpg" alt="Mitsuri Kanroji — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_mitsuri_hero.jpg" alt="Mitsuri Kanroji -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Mitsuri Kanroji</div>
             <div class="missing">missing: anime2_mitsuri_hero.jpg</div>
@@ -263,7 +285,7 @@
           <!-- Obanai -->
           <a class="char-block" href="characters/anime2_obanai.html" title="Obanai Iguro">
             <div class="bg" style="background-image:url('images/anime2_obanai_card.jpg')">
-              <img class="card-hero" src="images/anime2_obanai_hero.jpg" alt="Obanai Iguro — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
+              <img class="card-hero" src="images/anime2_obanai_hero.jpg" alt="Obanai Iguro -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';">
             </div>
             <div class="label">Obanai Iguro</div>
             <div class="missing">missing: anime2_obanai_hero.jpg</div>

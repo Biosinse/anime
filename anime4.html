@@ -60,6 +60,28 @@
 
     .button { background:var(--accent); color:#fff; padding:.6rem .85rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
   </style>
+<style>
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/anime4_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 245, 230, 0.88);
+  z-index: -1;
+}
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -78,7 +100,7 @@
 
   <p>
     <strong>Jujutsu Kaisen</strong> is set in a modern world where humanity unknowingly
-    creates its own monsters. Every negative emotion — fear, anger, regret, hatred —
+    creates its own monsters. Every negative emotion -fear, anger, regret, hatred —
     leaks into the environment and condenses into supernatural entities known as
     <em>Curses</em>.
     Invisible to ordinary people, these beings lurk in schools, hospitals, subways,
@@ -161,7 +183,7 @@
   <p>
     Jujutsu Kaisen refuses to divide the world into heroes and villains.
     Every character carries trauma, belief, and contradiction.
-    Violence is not glorified — it is shown as a consequence of unresolved hatred.
+    Violence is not glorified -it is shown as a consequence of unresolved hatred.
   </p>
 
   <h3>The Meaning of a Proper Death</h3>
@@ -187,25 +209,25 @@
         <h3>Core Characters - Click a tile to open detailed character pages</h3>
 
         <div class="char-hover-grid">
-          <a class="char-block" href="characters/anime4_yuji.html"><div class="bg" style="background-image:url('images/anime4_yuji_card.jpg')"><img class="card-hero" src="images/anime4_yuji_hero.jpg" alt="Yuji Itadori — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Yuji Itadori</div><div class="missing">missing: anime4_yuji_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_yuji.html"><div class="bg" style="background-image:url('images/anime4_yuji_card.jpg')"><img class="card-hero" src="images/anime4_yuji_hero.jpg" alt="Yuji Itadori -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Yuji Itadori</div><div class="missing">missing: anime4_yuji_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_megumi.html"><div class="bg" style="background-image:url('images/anime4_megumi_card.jpg')"><img class="card-hero" src="images/anime4_megumi_hero.jpg" alt="Megumi Fushiguro — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Megumi Fushiguro</div><div class="missing">missing: anime4_megumi_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_megumi.html"><div class="bg" style="background-image:url('images/anime4_megumi_card.jpg')"><img class="card-hero" src="images/anime4_megumi_hero.jpg" alt="Megumi Fushiguro -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Megumi Fushiguro</div><div class="missing">missing: anime4_megumi_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_nobara.html"><div class="bg" style="background-image:url('images/anime4_nobara_card.jpg')"><img class="card-hero" src="images/anime4_nobara_hero.jpg" alt="Nobara Kugisaki — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Nobara Kugisaki</div><div class="missing">missing: anime4_nobara_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_nobara.html"><div class="bg" style="background-image:url('images/anime4_nobara_card.jpg')"><img class="card-hero" src="images/anime4_nobara_hero.jpg" alt="Nobara Kugisaki -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Nobara Kugisaki</div><div class="missing">missing: anime4_nobara_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_gojo.html"><div class="bg" style="background-image:url('images/anime4_gojo_card.jpg')"><img class="card-hero" src="images/anime4_gojo_hero.jpg" alt="Satoru Gojo — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Satoru Gojo</div><div class="missing">missing: anime4_gojo_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_gojo.html"><div class="bg" style="background-image:url('images/anime4_gojo_card.jpg')"><img class="card-hero" src="images/anime4_gojo_hero.jpg" alt="Satoru Gojo -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Satoru Gojo</div><div class="missing">missing: anime4_gojo_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_sukuna.html"><div class="bg" style="background-image:url('images/anime4_sukuna_card.jpg')"><img class="card-hero" src="images/anime4_sukuna_hero.jpg" alt="Ryomen Sukuna — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Ryomen Sukuna</div><div class="missing">missing: anime4_sukuna_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_sukuna.html"><div class="bg" style="background-image:url('images/anime4_sukuna_card.jpg')"><img class="card-hero" src="images/anime4_sukuna_hero.jpg" alt="Ryomen Sukuna -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Ryomen Sukuna</div><div class="missing">missing: anime4_sukuna_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_nanami.html"><div class="bg" style="background-image:url('images/anime4_nanami_card.jpg')"><img class="card-hero" src="images/anime4_nanami_hero.jpg" alt="Kento Nanami — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Kento Nanami</div><div class="missing">missing: anime4_nanami_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_nanami.html"><div class="bg" style="background-image:url('images/anime4_nanami_card.jpg')"><img class="card-hero" src="images/anime4_nanami_hero.jpg" alt="Kento Nanami -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Kento Nanami</div><div class="missing">missing: anime4_nanami_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_maki.html"><div class="bg" style="background-image:url('images/anime4_maki_card.jpg')"><img class="card-hero" src="images/anime4_maki_hero.jpg" alt="Maki Zenin — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Maki Zenin</div><div class="missing">missing: anime4_maki_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_maki.html"><div class="bg" style="background-image:url('images/anime4_maki_card.jpg')"><img class="card-hero" src="images/anime4_maki_hero.jpg" alt="Maki Zenin -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Maki Zenin</div><div class="missing">missing: anime4_maki_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_toge.html"><div class="bg" style="background-image:url('images/anime4_toge_card.jpg')"><img class="card-hero" src="images/anime4_toge_hero.jpg" alt="Toge Inumaki — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Toge Inumaki</div><div class="missing">missing: anime4_toge_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_toge.html"><div class="bg" style="background-image:url('images/anime4_toge_card.jpg')"><img class="card-hero" src="images/anime4_toge_hero.jpg" alt="Toge Inumaki -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Toge Inumaki</div><div class="missing">missing: anime4_toge_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_panda.html"><div class="bg" style="background-image:url('images/anime4_panda_card.jpg')"><img class="card-hero" src="images/anime4_panda_hero.jpg" alt="Panda — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Panda</div><div class="missing">missing: anime4_panda_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_panda.html"><div class="bg" style="background-image:url('images/anime4_panda_card.jpg')"><img class="card-hero" src="images/anime4_panda_hero.jpg" alt="Panda -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Panda</div><div class="missing">missing: anime4_panda_hero.jpg</div></a>
 
-          <a class="char-block" href="characters/anime4_geto.html"><div class="bg" style="background-image:url('images/anime4_geto_card.jpg')"><img class="card-hero" src="images/anime4_geto_hero.jpg" alt="Suguru Geto — hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Suguru Geto</div><div class="missing">missing: anime4_geto_hero.jpg</div></a>
+          <a class="char-block" href="characters/anime4_geto.html"><div class="bg" style="background-image:url('images/anime4_geto_card.jpg')"><img class="card-hero" src="images/anime4_geto_hero.jpg" alt="Suguru Geto -hero" onerror="this.style.opacity='0'; this.closest('.char-block').querySelector('.missing')?.style.display='block';"></div><div class="label">Suguru Geto</div><div class="missing">missing: anime4_geto_hero.jpg</div></a>
         </div>
 
         <p style="margin-top:16px;"><a class="button" href="index.html">Back to Index</a></p>
