@@ -23,6 +23,21 @@
 }
 .page-buttons { margin-top: 1.25rem; display:flex; gap:0.6rem; flex-wrap:wrap; }
 .button.secondary { background: transparent !important; color: #B68F63 !important; border: 1px solid rgba(0,0,0,0.06) !important; }
+/* === Character profile image (centered, medium size) === */
+.character-profile {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.character-profile img {
+  width: 340px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
 </style>
 </head>
 <body>
@@ -54,7 +69,11 @@ Technically, Pieck’s Cart Titan enables strategic maneuvers—transporting hea
 Symbolically, she demonstrates that survival in wartime depends on invisible, unglorified work and that the narrative’s success is as much about persistence as about heroics.
 </p>
 
-<p style="margin-top:16px;"><a class="button" href="../anime5.html">Back to Attack on Titan</a></p>
+<div class="character-profile">
+  <img 
+    src="../images/anime1_Pieck_profile.jpg"
+    alt="Pieck profile card"
+</div>
 </main>
 </div>
 </body>
